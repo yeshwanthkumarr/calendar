@@ -1,0 +1,20 @@
+<div>
+ <app-luckyheader [startDate]="startDateString" [endDate]="endDateString" ></app-luckyheader></div>
+<div id="cells">
+        <ul class="days">
+            <li>Mo</li>
+            <li>Tu</li>
+            <li>We</li>
+            <li>Th</li>
+            <li>Fr</li>
+            <li>Sa</li>
+            <li>Su</li>
+          </ul>
+  <ul>
+    <app-luckycell *ngFor= "let cell of cells" [cell] = "cell" (valueUpdated)='updateTotal($event)'></app-luckycell>
+  </ul>
+</div>
+  <p>
+   Total: {{currentTotal}}
+  </p>
+
